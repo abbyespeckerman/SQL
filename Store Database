@@ -1,0 +1,31 @@
+
+CREATE TABLE electronics (id INTEGER, name TEXT, price INTEGER, section TEXT, rating INTEGER);
+
+INSERT INTO electronics VALUES (1, "Phone", 500, "Work", 4);
+INSERT INTO electronics VALUES (2, "iPad", 700, "Work", 4);
+INSERT INTO electronics VALUES (3, "Computer", 900, "Work", 5);
+INSERT INTO electronics VALUES (4, "Earbuds", 125, "Work", 4);
+INSERT INTO electronics VALUES (5, "TV", 1100, "Home", 5);
+INSERT INTO electronics VALUES (6, "Soundsystem", 300, "Home", 3);
+INSERT INTO electronics VALUES (7, "Oven", 2700, "Kitchen", 5);
+INSERT INTO electronics VALUES (8, "Microwave", 550, "Kitchen", 4);
+INSERT INTO electronics VALUES (9, "Stove", 475, "Kitchen", 1);
+INSERT INTO electronics VALUES (10, "Washing machine", 950, "Home", 5);
+INSERT INTO electronics VALUES (11, "Convection oven", 250, "Kitchen", 2);
+INSERT INTO electronics VALUES (12, "Instapot", 150, "Kitchen", 5);
+INSERT INTO electronics VALUES (13, "Air fryer", 100, "Kitchen", 4);
+INSERT INTO electronics VALUES (14, "Toaster", 35, "Kitchen", 4);
+INSERT INTO electronics VALUES (15, "Dryer", 900, "Home", 4);
+
+--Display the database ordered by section.
+SELECT * FROM electronics 
+ORDER BY section;
+
+--Display the kitchen items ordered by price.
+SELECT * FROM electronics
+WHERE section = "Kitchen"
+ORDER BY price;
+
+--Average price of work items.
+SELECT AVG (price) FROM electronics
+WHERE section = "Work";
